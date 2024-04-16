@@ -18,6 +18,8 @@ const db = mysql.createConnection({
   password: '1234',
 })
 
+app.listen(ServerPort)
+
 //route to get all employees
 app.get('/employees', function (req, res) {
   db.query(`SELECT * FROM employees`, function (err, result) {
@@ -148,5 +150,3 @@ app.delete('/deletecar/:id', (req, res) => {
     }
   })
 })
-
-app.listen(ServerPort)
